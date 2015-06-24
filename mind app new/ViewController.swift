@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
     @IBOutlet var myTextField: UITextField!
     
@@ -18,14 +18,20 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     var picker2Array: NSArray = ["まあまあ","普通","重要"]
     
     var mindArray:[String] = []
-
-
+    /*let savedata = NSUserDefaults.standardUserDefaults()
+    savedata.setObject(mindArray, forKey:"MIND")
+    saveadata.synchronize()
+*/
+    
     override func viewDidLoad() {
     super.viewDidLoad()
         
+        //UITextFieldに表示
     myTextField.text = "hello!"
     myTextField.delegate = self
     self.view.addSubview(myTextField)
+        
+        //UIPickerView
     
     myUIPicker.delegate = self
     myUIPicker.dataSource = self
@@ -55,6 +61,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     }
         return"";
     }
+    
+    
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(component == 0){
             println("列:\(row)")
@@ -62,29 +70,39 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         }else if(component == 1){
             println("列:\(row)")
             println("値:\(picker2Array[row])")
+            
         }
+        
+     
+        //@IBAction func changeTextColor (sender:UIPickerView) {
+            
+        }
+   
+    @IBAction func TapReturnKey(){
+                myTextField.resignFirstResponder()
     }
-    
+
+
+    //mind buttonを押すと、myTextFieldのテキストデータがmindArrayとしてViewController2.swiftに送られる
     @IBAction func didTapmindButton(){
         self.mindArray.append(self.myTextField.text)
         performSegueWithIdentifier("to2", sender: nil)
-    }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "to2"){
-            var viewController2: ViewController2 = segue.destinationViewController as!ViewController2
-            viewController2.recieveArray = self.mindArray
-            
-            
-        }
-        
+
+        var mindArray:[String] = []
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "to2"){
+            var viewController2: ViewController2 = segue.destinationViewController as!ViewController2
+            viewController2.receiveArray = self.mindArray
+            println(mindArray)
+        }
+}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-}
+   
+    }
 
