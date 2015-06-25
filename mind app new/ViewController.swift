@@ -38,11 +38,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     self.view.addSubview(myUIPicker)
     
     }
-    
+    //表示
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
     }
-    
+    //表示個数
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(component == 0){
         return picker1Array.count
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         }
         return 0;
         }
-    
+    //表示内容
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         
         if(component == 0){
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         return"";
     }
     
-    
+    //選択時
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(component == 0){
             println("列:\(row)")
@@ -70,25 +70,43 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         }else if(component == 1){
             println("列:\(row)")
             println("値:\(picker2Array[row])")
-            
         }
+
+    
+    if (myUIPicker.selectedRowInComponent(0)==0){
+    println("覚える")
+     myTextField.textColor = UIColor.redColor()
+    }else if (myUIPicker.selectedRowInComponent(0)==1){
+    println("ひらめき")
+     myTextField.textColor = UIColor.yellowColor()
+    }else if (myUIPicker.selectRowInComponent(0)==2){
+    println("調べる")
+    myTextField.textColor = UIColor.greenColor()
+    }else if (myUIPicker.selectedRowInComponent(0)==3){
+    println("便利")
+    myTextField.textColor = UIColor.blueColor()
         
-     
-        //@IBAction func changeTextColor (sender:UIPickerView) {
-            
+    }
+        
+   if (myUIPicker.selectedRowInComponent(1)==0){
+            println()
         }
-   
+        if (myUIPicker.selectedRowInComponent(1)==1){
+        
+        }
+        if (myUIPicker.selectedRowInComponent(1)==2){
+        
+    }
+    
+    
     @IBAction func TapReturnKey(){
                 myTextField.resignFirstResponder()
     }
 
 
-    //mind buttonを押すと、myTextFieldのテキストデータがmindArrayとしてViewController2.swiftに送られる
     @IBAction func didTapmindButton(){
         self.mindArray.append(self.myTextField.text)
         performSegueWithIdentifier("to2", sender: nil)
-
-        var mindArray:[String] = []
         
     }
     

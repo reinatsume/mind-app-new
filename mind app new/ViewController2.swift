@@ -10,21 +10,20 @@ import UIKit
 
 class ViewController2: UIViewController {
     
-    @IBOutlet var mindLabel : UILabel!
+    @IBOutlet var mindLabel:UILabel!
+    var receiveArray:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        var item: Int = receiceArray.count
+        for item in receviveArray{
+        println("\(item)")
+    
     }
 
-     var receiveArray:[String] = []
-     var item: Int = receiveArray.count
-    
-    for item in receviveArray {
-    println("\(item)")
-    
     }
-    
-    
+
     
     /*  if let recieveArray = savedata.objebctForKey("MIND") as?[String]{
     var mindString: AnyObject
