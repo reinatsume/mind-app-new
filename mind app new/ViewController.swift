@@ -14,8 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
     
     @IBOutlet var myUIPicker: UIPickerView!
-    var picker1Array: NSArray = ["覚える","ひらめき","調べる","便利"]
-    var picker2Array: NSArray = ["まあまあ","普通","重要"]
+    var picker1Array: NSArray = ["オボエル","ヒラメキ","シラベル","ベンリ"]
+    var picker2Array: NSArray = ["■","■□","■□■"]
     
     var mindArray:[String] = []
     /*let savedata = NSUserDefaults.standardUserDefaults()
@@ -97,6 +97,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         if (myUIPicker.selectedRowInComponent(1)==2){
         
     }
+*/
     
     
     @IBAction func TapReturnKey(){
@@ -109,19 +110,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         performSegueWithIdentifier("to2", sender: nil)
         
     }
-*/
-        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "to2"){
             var viewController2: ViewController2 = segue.destinationViewController as!ViewController2
             viewController2.receiveArray = self.mindArray
             println(mindArray)
         }
-}
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
    
     }
-
