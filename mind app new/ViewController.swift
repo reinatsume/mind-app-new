@@ -71,9 +71,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             println("列:\(row)")
             println("値:\(picker2Array[row])")
         }
-
+    }
     
-    if (myUIPicker.selectedRowInComponent(0)==0){
+        /*if (myUIPicker.selectedRowInComponent(0)==0){
     println("覚える")
      myTextField.textColor = UIColor.redColor()
     }else if (myUIPicker.selectedRowInComponent(0)==1){
@@ -109,7 +109,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         performSegueWithIdentifier("to2", sender: nil)
         
     }
-    
+*/
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "to2"){
             var viewController2: ViewController2 = segue.destinationViewController as!ViewController2
