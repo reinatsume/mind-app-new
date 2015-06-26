@@ -14,8 +14,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
     
     @IBOutlet var myUIPicker: UIPickerView!
-    var picker1Array: NSArray = ["オボエル","ヒラメキ","シラベル","ベンリ"]
-    var picker2Array: NSArray = ["■","■□","■□■"]
+    
+    var picker1: NSArray = ["オボエル","ヒラメキ","シラベル","ベンリ"]
+    var picker2: NSArray = ["■","■□","■□■"]
+    
+    private let picker1Component = 0
+    private let picker2Component = 1
+    
+    /*let picker1Row = myUIPicker.selectedRowInComponent(picker1Component)
+    let picker2Row = myUIPicker.selectedRowInComponent(picker2Component)
+    */
+    
+    
+    
     
     var mindArray:[String] = []
     /*let savedata = NSUserDefaults.standardUserDefaults()
@@ -45,9 +56,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     //表示個数
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(component == 0){
-        return picker1Array.count
+        return picker1.count
+            
+        
         }else if(component == 1){
-            return picker2Array.count
+            return picker2.count
+            
         }
         return 0;
         }
@@ -55,9 +69,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         
         if(component == 0){
-        return picker1Array[row] as! String
+        return picker1[row] as! String
         }else if (component == 1){
-         return picker2Array[row] as! String
+         return picker2[row] as! String
     }
         return"";
     }
@@ -66,38 +80,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(component == 0){
             println("列:\(row)")
-            println("値:\(picker1Array[row])")
+            println("値:\(picker1[row])")
+            
         }else if(component == 1){
             println("列:\(row)")
-            println("値:\(picker2Array[row])")
+            println("値:\(picker2[row])")
+            
         }
     }
-    
-        /*if (myUIPicker.selectedRowInComponent(0)==0){
-    println("覚える")
-     myTextField.textColor = UIColor.redColor()
-    }else if (myUIPicker.selectedRowInComponent(0)==1){
-    println("ひらめき")
-     myTextField.textColor = UIColor.yellowColor()
-    }else if (myUIPicker.selectRowInComponent(0)==2){
-    println("調べる")
-    myTextField.textColor = UIColor.greenColor()
-    }else if (myUIPicker.selectedRowInComponent(0)==3){
-    println("便利")
-    myTextField.textColor = UIColor.blueColor()
-        
-    }
-        
-   if (myUIPicker.selectedRowInComponent(1)==0){
-            println()
-        }
-        if (myUIPicker.selectedRowInComponent(1)==1){
-        
-        }
-        if (myUIPicker.selectedRowInComponent(1)==2){
-        
-    }
-*/
+
     
     
     @IBAction func TapReturnKey(){

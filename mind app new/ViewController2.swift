@@ -11,7 +11,7 @@ import UIKit
 class ViewController2: UIViewController {
     
     
-    @IBOutlet var mindLabel:UILabel!
+    var mindLabel : UILabel!
     var receiveArray : [String] = []
     
     override func viewDidLoad() {
@@ -20,22 +20,20 @@ class ViewController2: UIViewController {
         var item : Int = self.receiveArray.count
         for item in receiveArray{
             println("\(item)")
-           
-            var myLabel = UILabel(frame: CGRectMake(0,0,200,20))
-            myLabel.font = UIFont.systemFontOfSize(12)
-            myLabel.textColor = UIColor.blackColor()
             
-        }
-    }
+            }
+            
+            
+            /*let mindLabel : UILabel = UILabel (frame: CGRectMake(20, 20, 100, 100))
+            mindLabel.layer.masksToBounds = true
+            mindLabel.layer.cornerRadius = 20.0
+            mindLabel.text =
+            mindLabel.textAlignment = NSTextAlignment.Center
+            mindLabel.layer.position = CGPoint(x: self.view.bounds.width/2, y:200)
+            self.view.addSubview(mindLabel)        }
+*/
     
-        
-    /*  if let recieveArray = savedata.objebctForKey("MIND") as?[String]{
-    var mindString: AnyObject
-    for mindString in recieveArray {
-    recieveArray.append(mindString as NSString as String)
-    }
-    }
-
+    /*
     @IBOutlet var label: UILabel!
     @IBOutlet var label2: UILabel!
     
@@ -53,14 +51,7 @@ class ViewController2: UIViewController {
         }*/
    
     
-    /*@IBAction func TapaddButton(sender:UIButton){
-        let viewController: ViewController =
-        
-        self.navigationController?.popViewControllerAnimated(true)
     }
-   */
-
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
