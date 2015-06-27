@@ -11,18 +11,13 @@ import UIKit
 class ViewController2: UIViewController {
     
     
+    //ラベルを作成
     var mindLabel : UILabel!
+    
     var colorArray: [String] = []
     var fontArray:[String] = []
     
     var receiveArray : [String] = []
-    
-    /*if(defaults.objectForKey("NAME")){
-    let objects = defaults.objectForKey("MIND") as? NSArray
-    var mindString:AnyObject
-    for mindString in objects!{
-    receiveArray.append(mindString as NSArray)
-    }*/
     
     
     override func viewDidLoad() {

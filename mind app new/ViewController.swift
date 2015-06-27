@@ -122,12 +122,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         }
     }
 
+    //mindArrayの要素を保存
     @IBAction func didTapyouButton(){
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(mindArray, forKey:"MIND")
         defaults.synchronize()
 
-      performSegueWithIdentifier("show2", sender: nil)        
+        performSegueWithIdentifier("to2", sender: nil)
         
     }
     override func didReceiveMemoryWarning() {

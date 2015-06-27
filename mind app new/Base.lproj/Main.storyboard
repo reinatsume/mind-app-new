@@ -65,7 +65,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapyouButton" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oyQ-7Z-4YK"/>
-                                    <segue destination="MJv-hp-ne6" kind="show" identifier="show2" id="3DD-xf-cEz"/>
+                                    <segue destination="MJv-hp-ne6" kind="show" identifier="to2" id="3DD-xf-cEz"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4OS-f8-uXp">
