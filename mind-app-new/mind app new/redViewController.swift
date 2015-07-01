@@ -73,20 +73,10 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
-        //swipeTable.setEditing(editing, animated: animated)
+    
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        
-        // 編集
-        let edit = UITableViewRowAction(style: .Normal, title: "Edit") {
-            (action, indexPath) in
-            
-            self.redArray[indexPath.row] += "!!"
-            //self.swipeTable.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        }
-        
-        edit.backgroundColor = UIColor.greenColor()
         
         // 削除
         let del = UITableViewRowAction(style: .Default, title: "Delete") {
@@ -98,7 +88,7 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         
         del.backgroundColor = UIColor.redColor()
         
-        return [edit, del]
+        return [del]
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

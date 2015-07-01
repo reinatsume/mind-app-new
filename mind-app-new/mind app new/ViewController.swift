@@ -57,33 +57,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
     }
     
-    
-    /*//昔"openKey"という鍵で保存したかどうか確認
-    if((mindDefault.objectForKey("RED")) = nil){
-    
-    //objectsを配列として確定させ、前回の保存内容を格納
-    let objects = defaults.objectForKey("openKey") as? [String]
-    
-    //各名前を格納するための変数を宣言
-    var nameString:AnyObject
-    
-    //前回の保存内容が格納された配列の中身を一つずつ取り出す
-    for nameString in objects!{
-    //配列に追加していく
-    stringArray.append(nameString as String)
-    }
-    
-    }
-    
-    
-    
-    
-    
-    //現在保存されているstringArrayの要素数を表示
-    textNumOfArray.text = String(stringArray.count)
-    */
-    
-    
     //UIPickerViewを表示
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2

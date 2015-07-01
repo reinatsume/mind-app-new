@@ -15,7 +15,6 @@
 		A9B42A411B431B600040FE55 /* yellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B42A401B431B600040FE55 /* yellowViewController.swift */; };
 		A9B42A431B431B7F0040FE55 /* greenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B42A421B431B7F0040FE55 /* greenViewController.swift */; };
 		A9B42A451B431BD20040FE55 /* blueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B42A441B431BD20040FE55 /* blueViewController.swift */; };
-		A9B42A471B435D400040FE55 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B42A461B435D400040FE55 /* NavigationController.swift */; };
 		A9B42A491B4366E70040FE55 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B42A481B4366E70040FE55 /* SwiftLoader.swift */; };
 		A9B42A4B1B436A500040FE55 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B42A4A1B436A500040FE55 /* app-icon.png */; };
 		A9E4272D1B383200008794E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4272C1B383200008794E4 /* AppDelegate.swift */; };
@@ -52,7 +51,6 @@
 		A9B42A401B431B600040FE55 /* yellowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yellowViewController.swift; sourceTree = "<group>"; };
 		A9B42A421B431B7F0040FE55 /* greenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = greenViewController.swift; sourceTree = "<group>"; };
 		A9B42A441B431BD20040FE55 /* blueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blueViewController.swift; sourceTree = "<group>"; };
-		A9B42A461B435D400040FE55 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		A9B42A481B4366E70040FE55 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
 		A9B42A4A1B436A500040FE55 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon.png"; sourceTree = "<group>"; };
 		A9E427271B383200008794E4 /* mind app new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mind app new.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +123,6 @@
 				A9E427501B383D76008794E4 /* mind-03.png */,
 				A9E427511B383D76008794E4 /* mind-04.png */,
 				A9E4272C1B383200008794E4 /* AppDelegate.swift */,
-				A9B42A461B435D400040FE55 /* NavigationController.swift */,
 				A9B42A481B4366E70040FE55 /* SwiftLoader.swift */,
 				A9E4272E1B383200008794E4 /* ViewController.swift */,
 				A9B42A3E1B431B440040FE55 /* redViewController.swift */,
@@ -279,7 +276,6 @@
 			files = (
 				A9B42A491B4366E70040FE55 /* SwiftLoader.swift in Sources */,
 				A9B42A411B431B600040FE55 /* yellowViewController.swift in Sources */,
-				A9B42A471B435D400040FE55 /* NavigationController.swift in Sources */,
 				A9B42A451B431BD20040FE55 /* blueViewController.swift in Sources */,
 				A9E4272F1B383200008794E4 /* ViewController.swift in Sources */,
 				A9E4272D1B383200008794E4 /* AppDelegate.swift in Sources */,

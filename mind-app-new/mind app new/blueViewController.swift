@@ -38,9 +38,43 @@ class blueViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         cell.textLabel?.text = self.blueArray[indexPath.row]
         cell.textLabel?.textColor = UIColor.blueColor()
         self.tableView.separatorColor = UIColor.clearColor()
-
+        
         return cell
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
+        var newBounds = cell.bounds
+        newBounds.size.width = tableView.bounds.width
+        cell.bounds = newBounds
+        
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        return cell.bounds.height
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        // 削除
+        let del = UITableViewRowAction(style: .Default, title: "Delete") {
+            (action, indexPath) in
+            
+            self.blueArray.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        
+        del.backgroundColor = UIColor.redColor()
+        
+        return [del]
+    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
