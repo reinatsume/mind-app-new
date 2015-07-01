@@ -11,12 +11,17 @@ import Foundation
 import UIKit
 
 class ViewController3: UIViewController {
-
+ var mindLabel : UILabel!
+    
 
 override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
 
 }
+    
+    
 
     
     

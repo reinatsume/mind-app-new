@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class ViewController2: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     
     //ラベルを作成
-    var mindLabel : UILabel!
+    var mindTableView : UITableView!
     
     var colorArray: [String] = []
     var fontArray: [String] = []
@@ -33,30 +33,44 @@ class ViewController2: UIViewController {
         
         //recieveArrayの要素をラベルに表示
         for (var item = 0 ; item < receiveArray.count ; item++){
-            var mindLabel : UILabel = UILabel(frame:CGRectMake(20, CGFloat(40*item+30),200,50))//ラベル作成
-            mindLabel.text = receiveArray[item]
-            self.view.addSubview(mindLabel)
             
-            if colorArray == [0]{
+            func mindTableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return 1
+                
+            }
+            
+            //表示するセルの中身
+            func mindTableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+                var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+               cell.textLabel?.text = "\(indexPath.row)行目"
+            
+            
+            var mindLabel : UILabel = UILabel(frame:CGRectMake(20, CGFloat(40*item+30),200,50))//ラベル作成
+            mindLabel.text = receiveArray[item]//mindLabelのテキストはreceiveArrayの要素
+            self.view.addSubview(mindLabel)//これをmindLabelに表示する
+        
+        
+        
+        if colorArray[item] == "オボエル" {
                 mindLabel.textColor = UIColor.redColor()
-            }else if colorArray == [1]{
+        }else if colorArray[item] == "ヒラメキ"{
                 mindLabel.textColor = UIColor.yellowColor()
-                }else if  colorArray == [2]{
+        }else if  colorArray[item] == "シラベル"{
                     mindLabel.textColor = UIColor.greenColor()
-                }else if colorArray == [3]{
+        }else if colorArray[item] == "ベンリ"{
                         mindLabel.textColor = UIColor.blueColor()
             }
 
-            if fontArray[item] == "■"{
+            if fontArray == [0]{
                 mindLabel.font = UIFont.systemFontOfSize(CGFloat(20))
-            }else if fontArray[item] == "■□"{
+            }else if fontArray == [1]{
                 mindLabel.font = UIFont.systemFontOfSize(CGFloat(40))
-            }else if fontArray[item] == "■□■"{
+            }else if fontArray == [2]{
                 mindLabel.font = UIFont.systemFontOfSize(CGFloat(60))
             }
         }
-        
-        
+    }
+    
             
 //           let row1 : Int = colorArray.count
 //            if (row1==0){
@@ -105,9 +119,7 @@ class ViewController2: UIViewController {
             label2.text = recieveArray[0]
         }*/
    
-        }
-    
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
 }

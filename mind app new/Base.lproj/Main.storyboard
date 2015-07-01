@@ -22,6 +22,58 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0uE-rO-6gO">
                                 <rect key="frame" x="42" y="468" width="272" height="159"/>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4OS-f8-uXp">
+                                <rect key="frame" x="67" y="48" width="240" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TapReturnKey" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Pab-Ik-R1Y"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSq-49-Qer">
+                                <rect key="frame" x="31" y="417" width="39" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="■">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pbL-jG-Cky" kind="modal" id="1td-1G-Glj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbE-e2-aqb">
+                                <rect key="frame" x="320" y="417" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="■">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="You-2O-nZo" kind="modal" id="ngB-SK-FnT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drz-Yd-fhN">
+                                <rect key="frame" x="250" y="417" width="32" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="■">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VWP-RQ-Ji5" kind="modal" id="Gd7-4X-6no"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhe-eh-RDy">
+                                <rect key="frame" x="86" y="417" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="■">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BJU-h4-7lf" kind="modal" id="j9m-1A-8cC"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIN-xZ-90y">
                                 <rect key="frame" x="119" y="183" width="137" height="83"/>
                                 <state key="normal" backgroundImage="button.png">
@@ -29,60 +81,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapmindButton" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wdX-MB-w2Z"/>
-                                    <segue destination="MJv-hp-ne6" kind="show" identifier="to2" id="4QD-Fu-6Gv"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="■" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqs-31-BOL">
-                                <rect key="frame" x="30" y="403" width="30" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="■" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-dB-A9a">
-                                <rect key="frame" x="88" y="403" width="30" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="■" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eU-ZS-Fsw">
-                                <rect key="frame" x="249" y="403" width="29" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="■" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSa-Bn-c7e">
-                                <rect key="frame" x="306" y="403" width="30" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4OS-f8-uXp">
-                                <rect key="frame" x="67" y="50" width="240" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="TapReturnKey" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Pab-Ik-R1Y"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDr-KN-wFN">
-                                <rect key="frame" x="315" y="192" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testButton" destination="vXZ-lx-hvc" eventType="touchUpInside" id="13p-WR-iD8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f57-wK-J0b">
-                                <rect key="frame" x="306" y="96" width="46" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="you">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapyouButton" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oyQ-7Z-4YK"/>
-                                    <segue destination="cs1-Bv-vk7" kind="show" identifier="to3" id="stI-XL-PwL"/>
+                                    <segue destination="pbL-jG-Cky" kind="show" identifier="tored" id="hQY-Pm-zOA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -127,30 +126,128 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1r-Xi-28g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748.5" y="285.5"/>
+            <point key="canvasLocation" x="766.5" y="285.5"/>
         </scene>
-        <!--View Controller3-->
-        <scene sceneID="G6Y-ET-0so">
+        <!--Red View Controller-->
+        <scene sceneID="7XZ-0v-mCE">
             <objects>
-                <viewController id="cs1-Bv-vk7" customClass="ViewController3" customModule="mind_app_new" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pbL-jG-Cky" customClass="RedViewController" customModule="mind_app_new" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hQn-U2-BoM"/>
-                        <viewControllerLayoutGuide type="bottom" id="N3H-Tp-XR3"/>
+                        <viewControllerLayoutGuide type="top" id="IfK-Od-YeG"/>
+                        <viewControllerLayoutGuide type="bottom" id="8gU-4R-GMU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cAU-j8-JmH">
+                    <view key="view" contentMode="scaleToFill" id="q8N-zW-S3x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red.png" translatesAutoresizingMaskIntoConstraints="NO" id="ChI-8S-3Hq">
+                                <rect key="frame" x="-12" y="0.0" width="387" height="674"/>
+                            </imageView>
+                            <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" rowHeight="635" translatesAutoresizingMaskIntoConstraints="NO" id="tsb-P4-keL">
+                                <rect key="frame" x="0.0" y="52" width="350" height="635"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tsb-P4-keL" id="1oi-PM-QR1">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l82-Rc-w5s">
+                                            <rect key="frame" x="215" y="431" width="30" height="30"/>
+                                            <state key="normal" title="top">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8oX-7q-3GA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DhK-ni-Bd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214.5" y="285.5"/>
+            <point key="canvasLocation" x="1263.5" y="294.5"/>
+        </scene>
+        <!--Yellow View Controller-->
+        <scene sceneID="xeU-lC-Nj1">
+            <objects>
+                <viewController id="BJU-h4-7lf" customClass="YellowViewController" customModule="mind_app_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jvk-hc-Elh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zmj-bo-6zA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2BH-EG-vWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-jq-gUA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzl-eg-5aA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703.5" y="285.5"/>
+        </scene>
+        <!--Green View Controller-->
+        <scene sceneID="c1A-ph-5sg">
+            <objects>
+                <viewController id="VWP-RQ-Ji5" customClass="GreenViewController" customModule="mind_app_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9sQ-qI-tyx"/>
+                        <viewControllerLayoutGuide type="bottom" id="YHA-sI-J53"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y8d-Tw-Was">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green.png" translatesAutoresizingMaskIntoConstraints="NO" id="p62-Ul-MWo">
+                                <rect key="frame" x="0.0" y="-8" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5LO-HO-4uv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766.5" y="1044.5"/>
+        </scene>
+        <!--Blue View Controller-->
+        <scene sceneID="bUw-4l-8Cz">
+            <objects>
+                <viewController id="You-2O-nZo" customClass="BlueViewController" customModule="mind_app_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DvF-Gb-WA8"/>
+                        <viewControllerLayoutGuide type="bottom" id="e7N-Na-ygJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u84-P7-HoA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-Zl-r4d">
+                                <rect key="frame" x="0.0" y="-8" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4W7-4R-uy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252.5" y="1049.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="blue.png" width="250" height="350"/>
         <image name="button.png" width="250" height="179"/>
+        <image name="green.png" width="250" height="350"/>
         <image name="mind.png" width="250" height="350"/>
+        <image name="red.png" width="250" height="350"/>
+        <image name="yellow.png" width="250" height="350"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hQY-Pm-zOA"/>
+    </inferredMetricsTieBreakers>
 </document>
