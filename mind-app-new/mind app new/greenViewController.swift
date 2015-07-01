@@ -72,6 +72,7 @@ class greenViewController: UIViewController,UITableViewDelegate, UITableViewData
             
             self.greenArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.mindDefault.removeObjectForKey("GREEN")
         }
         
         del.backgroundColor = UIColor.redColor()

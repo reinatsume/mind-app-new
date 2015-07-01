@@ -56,7 +56,7 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         }*/
         
         cell.textLabel?.text = self.redArray[indexPath.row]
-//        cell.textLabel?.textColor = UIColor.redColor()
+        cell.textLabel?.textColor = UIColor.redColor()
         self.tableView.separatorColor = UIColor.clearColor()
         return cell
     }
@@ -86,12 +86,23 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             
             self.redArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.mindDefault.removeObjectForKey("RED")
+
         }
         
         del.backgroundColor = UIColor.redColor()
         
         return [del]
     }
+//    //データを読み込んで削除=========================
+//   
+//    var mindDefault = NSUserDefaults.standardUserDefaults()
+//    
+//    redArray = [arrayForKey:"RED"]; //読み込み
+//    arr = contents;
+//    mindDefault:setObject:arr forKey:"RED"];
+//    mindDefault synchronize];
+//    //データを読み込んで削除===
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")

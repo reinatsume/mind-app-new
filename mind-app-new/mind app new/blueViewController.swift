@@ -69,6 +69,7 @@ class blueViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             
             self.blueArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.mindDefault.removeObjectForKey("BLUE")
         }
         
         del.backgroundColor = UIColor.redColor()
