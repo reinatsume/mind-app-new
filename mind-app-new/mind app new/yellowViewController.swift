@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class yellowViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    
+    var mindDefault = NSUserDefaults.standardUserDefaults()
     //テーブルビューインスタンス作成
     var tableView: UITableView  =   UITableView()
     
@@ -45,6 +45,24 @@ class yellowViewController: UIViewController,UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
     }
+    
+    @IBAction func mind () {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.delegate = self
+        if((mindDefault.objectForKey("YELLOW")) != nil){
+            let objects = mindDefault.objectForKey("YELLOW") as? [String]
+            var mindString:AnyObject
+            for mindString in objects!{
+                yellowArray.append(mindString as String)
+            }
+        }
+        println(yellowArray)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

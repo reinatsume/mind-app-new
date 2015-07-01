@@ -37,6 +37,9 @@
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Enm-zW-9Dh" kind="show" identifier="togreen" id="UNi-O9-c77"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpE-Re-CXx">
                                 <rect key="frame" x="315" y="403" width="30" height="30"/>
@@ -45,6 +48,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="PX3-n4-8uw" kind="show" identifier="toblue" id="aTW-Lf-HaJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTt-zW-u1K">
                                 <rect key="frame" x="29" y="403" width="30" height="30"/>
@@ -55,6 +61,7 @@
                                 </state>
                                 <connections>
                                     <action selector="red" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iHV-Ww-vnL"/>
+                                    <segue destination="kIE-Y6-BqI" kind="show" identifier="tored" id="rCg-jH-3ED"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkb-kT-yq7">
@@ -65,7 +72,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="l6h-OO-lKk" kind="show" identifier="toyellow" id="l0a-RX-yNw"/>
+                                    <segue destination="l6h-OO-lKk" kind="show" identifier="toyellow" id="Cyt-nJ-Twh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIN-xZ-90y">
@@ -75,7 +82,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapmindButton" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wdX-MB-w2Z"/>
-                                    <segue destination="kIE-Y6-BqI" kind="show" id="Qet-iC-bXo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032.5" y="285.5"/>
+            <point key="canvasLocation" x="1028.5" y="445.5"/>
         </scene>
         <!--Red View Controller-->
         <scene sceneID="XXN-R1-lo3">
@@ -107,6 +113,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red.png" translatesAutoresizingMaskIntoConstraints="NO" id="37k-FZ-weT">
                                 <rect key="frame" x="-19" y="-18" width="412" height="699"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRc-x7-8so">
+                                <rect key="frame" x="311" y="594" width="34" height="30"/>
+                                <state key="normal" title="mind">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mind" destination="kIE-Y6-BqI" eventType="touchUpInside" id="HPM-61-HDQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -131,6 +147,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="B5F-fB-19B">
                                 <rect key="frame" x="0.0" y="-16" width="375" height="695"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-ed-Ecw">
+                                <rect key="frame" x="313" y="599" width="34" height="30"/>
+                                <state key="normal" title="mind">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mind" destination="l6h-OO-lKk" eventType="touchUpInside" id="Iu7-bd-7sV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -155,6 +181,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yrk-RH-9cA">
                                 <rect key="frame" x="0.0" y="-16" width="375" height="700"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqU-MY-szb">
+                                <rect key="frame" x="325" y="599" width="34" height="30"/>
+                                <state key="normal" title="mind">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mind" destination="Enm-zW-9Dh" eventType="touchUpInside" id="5rj-vl-teo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -162,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeG-bL-hwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2462.5" y="285.5"/>
+            <point key="canvasLocation" x="2174.5" y="53.5"/>
         </scene>
         <!--Blue View Controller-->
         <scene sceneID="L29-Ze-IAg">
@@ -179,6 +215,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zcz-Hf-Wez">
                                 <rect key="frame" x="0.0" y="-16" width="375" height="698"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BL0-Bo-gc7">
+                                <rect key="frame" x="325" y="604" width="34" height="30"/>
+                                <state key="normal" title="mind">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mind" destination="PX3-n4-8uw" eventType="touchUpInside" id="Y8G-sJ-vye"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -186,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Sb-Gn-Oi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929.5" y="285.5"/>
+            <point key="canvasLocation" x="2715.5" y="659.5"/>
         </scene>
     </scenes>
     <resources>

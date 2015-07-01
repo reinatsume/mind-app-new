@@ -148,27 +148,33 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             SwiftLoader.hide()
         })//SwiftLoaderを使用
         
-        fontArray.append(font)//fontArray
-        
         
         if (myUIPicker.selectedRowInComponent(0) == 0){
             redArray.append(self.myTextField.text)//"オボエル"を選んだ時、テキストはredArrayに配列される
-            mindDefault.setObject(redArray, forKey: "RED")
-            mindDefault.synchronize()//redArrayを"RED"で保存
+            fontArray.append(font)
+            mindDefault.setObject(redArray, forKey: "RED")//redArrayを"RED"で保存
+            mindDefault.setObject(fontArray, forKey: "FONT")//fontArrayを"FONT"で保存
+            mindDefault.synchronize()
             
         }else if (myUIPicker.selectedRowInComponent(0) == 1){
         yellowArray.append(self.myTextField.text)
-            mindDefault.setObject(yellowArray, forKey: "YELLOW")
+            fontArray.append(font)
+            mindDefault.setObject(yellowArray, forKey: "YELLOW")//yellowArrayを""
+            mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
         
         }else if(myUIPicker.selectedRowInComponent(0) == 2){
             greenArray.append(self.myTextField.text)
+            fontArray.append(font)
             mindDefault.setObject(greenArray, forKey: "GREEN")
+            mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
         
         }else{
             blueArray.append(self.myTextField.text)
+            fontArray.append(font)
             mindDefault.setObject(blueArray, forKey: "BLUE")
+            mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
         }
     }
@@ -176,81 +182,38 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
     @IBAction func red(){
         performSegueWithIdentifier("tored", sender: nil)
-    }
-    
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        if(segue.identifier == "tored"){
-            var redviewController: redViewController = segue.destinationViewController as!redViewController
-            redviewController.redArray = self.redArray
-            println(redArray)
-            }
     }
     
     @IBAction func yellow (){
         performSegueWithIdentifier("toyellow", sender: nil)
     }
+    @IBAction func green(){
+        performSegueWithIdentifier("togreen", sender: nil)
+    }
+    @IBAction func blue(){
+        performSegueWithIdentifier("toblue", sender: nil)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-    if(segue.identifier == "toyellow"){
+        
+        if(segue.identifier == "tored"){
+            var redviewController: redViewController = segue.destinationViewController as!redViewController
+            redviewController.redArray = self.redArray
+            println(redArray)
+        }else if(segue.identifier == "toyellow"){
             var yellowviewController: yellowViewController = segue.destinationViewController as!yellowViewController
             yellowviewController.yellowArray = self.yellowArray
             println(yellowArray)
-    }
-
-    }
-    
-/*@IBAction func green(){
-        performSegueWithIdentifier("togreen", sender: nil)
-    }
-    
-  
-
-            
-            performSegueWithIdentifier("togreen", sender: nil)
-            mindDefault.setObject(greenArray, forKey: "GREEN")
-            mindDefault.synchronize()
-            
         }else if(segue.identifier == "togreen"){
             var greenviewController: greenViewController = segue.destinationViewController as!greenViewController
             greenviewController.greenArray = self.greenArray
             println(greenArray)
-            
-            performSegueWithIdentifier("toblue", sender: nil)
-            mindDefault.setObject(blueArray, forKey: "BLUE")
-            
-            
         }else if(segue.identifier == "toblue"){
             var blueviewController: blueViewController = segue.destinationViewController as!blueViewController
             blueviewController.blueArray = self.blueArray
-            println(blueArray)
+        }
+
     }
-    
-        }
-    @IBAction func red(){
-        performSegueWithIdentifier("tored", sender: nil)
-      
-        if !redArray.isEmpty == true{
-            
-            //配列の要素数以上の数字になったらエラーをおこすので、越えたら0に戻す
-            if num >= stringArray.count {
-                
-                num = 0
-                
-            }
-            
-            //配列の中身を表示してあげる
-            myLabel.text = stringArray[num]
-            
-            //配列の何番目にいるのかを表示してあげる
-            textAtNum.text = String(num)
-            
-            //配列の確認する番数を増やす
-            num++
-        }
-
-
-    
-    }*/
     
     
     override func didReceiveMemoryWarning() {

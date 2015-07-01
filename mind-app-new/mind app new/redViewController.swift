@@ -11,6 +11,7 @@ import UIKit
 
 class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
+    var mindDefault = NSUserDefaults.standardUserDefaults()
     //テーブルビューインスタンス作成
     var tableView: UITableView  =   UITableView()
     
@@ -18,9 +19,11 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     var redArray: [String] = []
     var fontArray:[String] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         
         //テーブルビュー初期化、関連付け
         tableView.frame         =   CGRectMake(0, 50, 320, 200);
@@ -36,12 +39,68 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        
+        /*var item : Int = self.redArray.count
+        for item in redArray{
+            println("\(item)")
+        }
+       
+        if fontArray[item] == "■"{
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
+        }else if fontArray[item] == "■□"{
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
+        }else if fontArray[item] == "■□■"{
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(30))
+        }*/
+        
         cell.textLabel?.text = self.redArray[indexPath.row]
         cell.textLabel?.textColor = UIColor.redColor()
         self.tableView.separatorColor = UIColor.clearColor()
         return cell
     }
     
+        func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+            let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
+            var newBounds = cell.bounds
+            newBounds.size.width = tableView.bounds.width
+            cell.bounds = newBounds
+            
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            return cell.bounds.height
+        }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        //swipeTable.setEditing(editing, animated: animated)
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        // 編集
+        let edit = UITableViewRowAction(style: .Normal, title: "Edit") {
+            (action, indexPath) in
+            
+            self.redArray[indexPath.row] += "!!"
+            //self.swipeTable.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+        
+        edit.backgroundColor = UIColor.greenColor()
+        
+        // 削除
+        let del = UITableViewRowAction(style: .Default, title: "Delete") {
+            (action, indexPath) in
+            
+            self.redArray.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        
+        del.backgroundColor = UIColor.redColor()
+        
+        return [edit, del]
+    }
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
     }
@@ -51,20 +110,45 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         return true
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        swipeTable.setEditing(editing, animated: animated)
-    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
+    
+    
     /*func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            redArray.removeObjectAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        switch editingStyle {
+        case .Delete:
+            self.items.removeObjectAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        default:
+            return
         }
     }*/
-
+    /*func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+    redArray.removeObjectAtIndex(indexPath.row)
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    }*/
+    @IBAction func mind(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.delegate = self
+        if((mindDefault.objectForKey("RED")) != nil){
+            let objects = mindDefault.objectForKey("RED") as? [String]
+            var mindString:AnyObject
+            for mindString in objects!{
+                redArray.append(mindString as String)
+            }
+        }
+        println(redArray)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-};
+    
+    }
+
