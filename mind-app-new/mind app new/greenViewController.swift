@@ -13,6 +13,8 @@ import UIKit
 
 class greenViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var mindDefault = NSUserDefaults.standardUserDefaults()
+    
+    
     //テーブルビューインスタンス作成
     var tableView: UITableView  =   UITableView()
     
@@ -77,7 +79,7 @@ class greenViewController: UIViewController,UITableViewDelegate, UITableViewData
         return [del]
     }
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
-
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
@@ -99,7 +101,7 @@ class greenViewController: UIViewController,UITableViewDelegate, UITableViewData
         }
         println(greenArray)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

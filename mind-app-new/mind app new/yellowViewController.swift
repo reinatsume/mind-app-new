@@ -11,6 +11,8 @@ import UIKit
 
 class yellowViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var mindDefault = NSUserDefaults.standardUserDefaults()
+    
+    
     //テーブルビューインスタンス作成
     var tableView: UITableView  =   UITableView()
     
@@ -75,7 +77,7 @@ class yellowViewController: UIViewController,UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
     }
@@ -96,7 +98,7 @@ class yellowViewController: UIViewController,UITableViewDelegate, UITableViewDat
         }
         println(yellowArray)
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

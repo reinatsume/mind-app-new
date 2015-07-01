@@ -51,7 +51,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         myUIPicker.dataSource = self
         self.view.addSubview(myUIPicker)
         
-        
         //fontの初期値を設定
         font = "■"
         
@@ -128,31 +127,32 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             mindDefault.setObject(redArray, forKey: "RED")//redArrayを"RED"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")//fontArrayを"FONT"で保存
             mindDefault.synchronize()
+            println(redArray)
             
         }else if (myUIPicker.selectedRowInComponent(0) == 1){
-        yellowArray.append(self.myTextField.text)
+            yellowArray.append(self.myTextField.text)//"ヒラメキ"を選んだ時、テキストはyellowArrayに配列される
             fontArray.append(font)
-            mindDefault.setObject(yellowArray, forKey: "YELLOW")//yellowArrayを""
+            mindDefault.setObject(yellowArray, forKey: "YELLOW")//yellowArrayを"FONT"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
-        
+            
         }else if(myUIPicker.selectedRowInComponent(0) == 2){
-            greenArray.append(self.myTextField.text)
+            greenArray.append(self.myTextField.text)//"シラベル"を選んだ時、テキストはyellowArrayに配列される
             fontArray.append(font)
-            mindDefault.setObject(greenArray, forKey: "GREEN")
+            mindDefault.setObject(greenArray, forKey: "GREEN")//greenArrayを"FONT"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
-        
+            
         }else{
-            blueArray.append(self.myTextField.text)
+            blueArray.append(self.myTextField.text)//"ベンリ"を選んだ時、テキストはyellowArrayに配列される
             fontArray.append(font)
-            mindDefault.setObject(blueArray, forKey: "BLUE")
+            mindDefault.setObject(blueArray, forKey: "BLUE")//blueArrayを"FONT"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
         }
     }
     
-        
+    
     @IBAction func red(){
         performSegueWithIdentifier("tored", sender: nil)
     }
@@ -168,24 +168,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        println("segue")
         
         if(segue.identifier == "tored"){
             var redviewController: redViewController = segue.destinationViewController as!redViewController
-            redviewController.redArray = self.redArray
+//            redviewController.redArray = self.redArray
             println(redArray)
+            println("redsegue")
         }else if(segue.identifier == "toyellow"){
             var yellowviewController: yellowViewController = segue.destinationViewController as!yellowViewController
-            yellowviewController.yellowArray = self.yellowArray
+//            yellowviewController.yellowArray = self.yellowArray
             println(yellowArray)
         }else if(segue.identifier == "togreen"){
             var greenviewController: greenViewController = segue.destinationViewController as!greenViewController
-            greenviewController.greenArray = self.greenArray
+//            greenviewController.greenArray = self.greenArray
             println(greenArray)
-        }else if(segue.identifier == "toblue"){
+        }else{
             var blueviewController: blueViewController = segue.destinationViewController as!blueViewController
-            blueviewController.blueArray = self.blueArray
+//            blueviewController.blueArray = self.blueArray
+            println(blueArray)
         }
-
+        
     }
     
     

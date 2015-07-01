@@ -11,6 +11,8 @@ import UIKit
 
 class blueViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var mindDefault = NSUserDefaults.standardUserDefaults()
+    
+    
     //テーブルビューインスタンス作成
     var tableView: UITableView  =   UITableView()
     

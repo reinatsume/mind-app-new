@@ -12,6 +12,8 @@ import UIKit
 class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     var mindDefault = NSUserDefaults.standardUserDefaults()
+    
+    
     //テーブルビューインスタンス作成
     var tableView: UITableView  =   UITableView()
     
@@ -42,38 +44,38 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         
         /*var item : Int = self.redArray.count
         for item in redArray{
-            println("\(item)")
+        println("\(item)")
         }
-       
+        
         if fontArray[item] == "■"{
-            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
+        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
         }else if fontArray[item] == "■□"{
-            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
+        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
         }else if fontArray[item] == "■□■"{
-            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(30))
+        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(30))
         }*/
         
         cell.textLabel?.text = self.redArray[indexPath.row]
-        cell.textLabel?.textColor = UIColor.redColor()
+//        cell.textLabel?.textColor = UIColor.redColor()
         self.tableView.separatorColor = UIColor.clearColor()
         return cell
     }
     
-        func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
-            var newBounds = cell.bounds
-            newBounds.size.width = tableView.bounds.width
-            cell.bounds = newBounds
-            
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
-            return cell.bounds.height
-        }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
+        var newBounds = cell.bounds
+        newBounds.size.width = tableView.bounds.width
+        cell.bounds = newBounds
+        
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        return cell.bounds.height
+    }
     
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
-    
+        
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
@@ -90,7 +92,7 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         
         return [del]
     }
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
     }
@@ -103,26 +105,11 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
     
     
-    /*func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        switch editingStyle {
-        case .Delete:
-            self.items.removeObjectAtIndex(indexPath.row)
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-        default:
-            return
-        }
-    }*/
-    /*func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-    redArray.removeObjectAtIndex(indexPath.row)
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-    }
-    }*/
     @IBAction func mind(){
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
-    
+ 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.delegate = self
@@ -140,5 +127,5 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
-    }
+}
 
