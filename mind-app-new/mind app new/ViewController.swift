@@ -132,21 +132,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         }else if (myUIPicker.selectedRowInComponent(0) == 1){
             yellowArray.append(self.myTextField.text)//"ヒラメキ"を選んだ時、テキストはyellowArrayに配列される
             fontArray.append(font)
-            mindDefault.setObject(yellowArray, forKey: "YELLOW")//yellowArrayを"FONT"で保存
+            mindDefault.setObject(yellowArray, forKey: "YELLOW")//yellowArrayを"YELLOW"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
             
         }else if(myUIPicker.selectedRowInComponent(0) == 2){
-            greenArray.append(self.myTextField.text)//"シラベル"を選んだ時、テキストはyellowArrayに配列される
+            greenArray.append(self.myTextField.text)//"シラベル"を選んだ時、テキストはgreenArrayに配列される
             fontArray.append(font)
-            mindDefault.setObject(greenArray, forKey: "GREEN")//greenArrayを"FONT"で保存
+            mindDefault.setObject(greenArray, forKey: "GREEN")//greenArrayを"GREEN"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
             
         }else{
-            blueArray.append(self.myTextField.text)//"ベンリ"を選んだ時、テキストはyellowArrayに配列される
+            blueArray.append(self.myTextField.text)//"ベンリ"を選んだ時、テキストはblueArrayに配列される
             fontArray.append(font)
-            mindDefault.setObject(blueArray, forKey: "BLUE")//blueArrayを"FONT"で保存
+            mindDefault.setObject(blueArray, forKey: "BLUE")//blueArrayを"BLUE"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
         }

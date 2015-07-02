@@ -19,9 +19,10 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     
     //テーブルに表示するセル配列
     var redArray: [String] = []
+    
     var fontArray:[String] = []
     
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,20 +42,15 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        
-        /*var item : Int = self.redArray.count
-        for item in redArray{
-        println("\(item)")
-        }
-        
-        if fontArray[item] == "■"{
+        /*
+        if fontArray[0] == "■" {
         cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
-        }else if fontArray[item] == "■□"{
+        }else if fontArray[1] == "■□"{
         cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
-        }else if fontArray[item] == "■□■"{
+        }else if fontArray[2] == "■□■"{
         cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(30))
-        }*/
-        
+        }
+        */
         cell.textLabel?.text = self.redArray[indexPath.row]
         cell.textLabel?.textColor = UIColor.redColor()
         self.tableView.separatorColor = UIColor.clearColor()
@@ -86,7 +82,7 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             
             self.redArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            self.mindDefault.removeObjectForKey("RED")
+            self.mindDefault.removeObjectForKey("RED")//mindUserDefault
 
         }
         
@@ -94,16 +90,6 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         
         return [del]
     }
-//    //データを読み込んで削除=========================
-//   
-//    var mindDefault = NSUserDefaults.standardUserDefaults()
-//    
-//    redArray = [arrayForKey:"RED"]; //読み込み
-//    arr = contents;
-//    mindDefault:setObject:arr forKey:"RED"];
-//    mindDefault synchronize];
-//    //データを読み込んで削除===
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
     }
@@ -124,14 +110,26 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.delegate = self
+        //mindDe
         if((mindDefault.objectForKey("RED")) != nil){
             let objects = mindDefault.objectForKey("RED") as? [String]
             var mindString:AnyObject
             for mindString in objects!{
                 redArray.append(mindString as String)
+                }
+            println(redArray)
+            
+        if((mindDefault.objectForKey("FONT")) != nil){
+            let obejects = mindDefault.objectForKey("FONT") as? [String]
+            var fontString:AnyObject
+            for fontString in objects!{
+            fontArray.append(fontString as String)
             }
         }
-        println(redArray)
+        
+        
+        
+    }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
