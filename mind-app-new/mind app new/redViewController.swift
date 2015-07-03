@@ -19,10 +19,11 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     
     //テーブルに表示するセル配列
     var redArray: [String] = []
+    var smallFontArray:[String] = []
+    var mediumFontArray:[String] = []
+    var bigFontArray:[String] = []
     
-    var fontArray:[String] = []
     
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,21 +48,20 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         cell.textLabel?.text = self.redArray[indexPath.row]
         cell.textLabel?.textColor = UIColor.redColor()
         self.tableView.separatorColor = UIColor.clearColor()
-        return cell
-
-        /*var item : Int = self.fontArray.count
-        for item in fontArray{
-            println("\(item)")
-
-        if fontArray[item] == "■" {
-        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
-        }else if fontArray[item] == "■□"{
-        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
-        }else if fontArray[2] == "■□■"{
-        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(30))
+        
+        if smallFontArray == [""]{
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
         }
-        */
-            }
+        if mediumFontArray == [""]{
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
+        }
+        
+        if bigFontArray == [""]{
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(30))
+        }
+        
+        return cell
+    }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
@@ -89,7 +89,7 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             self.redArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             self.mindDefault.removeObjectForKey("RED")//mindUserDefault
-
+            
         }
         
         del.backgroundColor = UIColor.redColor()
@@ -113,7 +113,7 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }//前の画面に戻る
- 
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.delegate = self
@@ -123,21 +123,35 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             var mindString:AnyObject
             for mindString in objects!{
                 redArray.append(mindString as String)
-                }
+            }
             println(redArray)
             
-        if((mindDefault.objectForKey("FONT")) != nil){
-            let obejects = mindDefault.objectForKey("FONT") as? [String]
-            var fontString:AnyObject
-            for fontString in objects!{
-            fontArray.append(fontString as String)
+            if((mindDefault.objectForKey("SMALL")) != nil){
+                let obejects = mindDefault.objectForKey("SMALL") as? [String]
+                var fontString:AnyObject
+                for fontString in objects!{
+                    smallFontArray.append(fontString as String)
+                }
+                if((mindDefault.objectForKey("MEDIUM")) != nil){
+                    let obejects = mindDefault.objectForKey("MEDIUM") as? [String]
+                    var fontString:AnyObject
+                    for fontString in objects!{
+                        mediumFontArray.append(fontString as String)
+                    }
+                    
+                    if((mindDefault.objectForKey("BIG")) != nil){
+                        let obejects = mindDefault.objectForKey("BIG") as? [String]
+                        var fontString:AnyObject
+                        for fontString in objects!{
+                            bigFontArray.append(fontString as String)
+                        }
+                        
+                    }
+                }
             }
         }
-        
-        
-        
     }
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

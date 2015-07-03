@@ -37,6 +37,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     var greenArray:[String] = []//"シラベル"のテキストの配列
     var blueArray:[String] = []//"ベンリ"のテキストの配列
     
+    var smallFontArray:[String] = []
+    var mediumFontArray:[String] = []
+    var bigFontArray:[String] = []
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,6 +153,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             mindDefault.setObject(blueArray, forKey: "BLUE")//blueArrayを"BLUE"で保存
             mindDefault.setObject(fontArray, forKey: "FONT")
             mindDefault.synchronize()
+        }
+        
+        if(myUIPicker.selectedRowInComponent(1) == 1){
+            smallFontArray.append(font)
+            mindDefault.setObject(smallFontArray, forKey: "SMALL")
+            
+        }else if (myUIPicker.selectedRowInComponent(1) == 2){
+            mediumFontArray.append(font)
+            mindDefault.setObject(mediumFontArray, forKey: "MEDIUM")
+            
+        }else{
+            bigFontArray.append(font)
+            mindDefault.setObject(bigFontArray, forKey: "BIG")
         }
     }
     
