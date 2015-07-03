@@ -40,22 +40,28 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         return self.redArray.count
     }
     
+    //テーブルビューの表示
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        /*
-        if fontArray[0] == "■" {
+        
+        cell.textLabel?.text = self.redArray[indexPath.row]
+        cell.textLabel?.textColor = UIColor.redColor()
+        self.tableView.separatorColor = UIColor.clearColor()
+        return cell
+
+        /*var item : Int = self.fontArray.count
+        for item in fontArray{
+            println("\(item)")
+
+        if fontArray[item] == "■" {
         cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
-        }else if fontArray[1] == "■□"{
+        }else if fontArray[item] == "■□"{
         cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
         }else if fontArray[2] == "■□■"{
         cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(30))
         }
         */
-        cell.textLabel?.text = self.redArray[indexPath.row]
-        cell.textLabel?.textColor = UIColor.redColor()
-        self.tableView.separatorColor = UIColor.clearColor()
-        return cell
-    }
+            }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
@@ -90,14 +96,15 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         
         return [del]
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("セルを選択しました！ #\(indexPath.row)!")
-    }
+    }//セルを選択したとき
     
     func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
     {
         return true
-    }
+    }//テーブルビューへの編集を可能にする
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
     
@@ -105,12 +112,12 @@ class redViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     @IBAction func mind(){
         self.dismissViewControllerAnimated(true, completion: nil)
         
-    }
+    }//前の画面に戻る
  
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.delegate = self
-        //mindDe
+        //mindDefaultを呼び出す
         if((mindDefault.objectForKey("RED")) != nil){
             let objects = mindDefault.objectForKey("RED") as? [String]
             var mindString:AnyObject
