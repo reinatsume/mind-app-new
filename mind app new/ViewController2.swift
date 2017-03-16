@@ -26,33 +26,32 @@ class ViewController2: UIViewController {
       
         //recieveArrayの中の要素
         var item : Int = self.receiveArray.count
-        for item in receiveArray{
-            println("\(item)")
-            
-            }
+        for item in receiveArray {
+            print(item)
+        }
         
         //recieveArrayの要素をラベルに表示
-        for (var item = 0 ; item < receiveArray.count ; item++){
-            var mindLabel : UILabel = UILabel(frame:CGRectMake(20, CGFloat(40*item+30),200,50))//ラベル作成
+        for item in 0  ..< receiveArray.count {
+            var mindLabel : UILabel = UILabel(frame:CGRect(x: 20, y: CGFloat(40*item+30),width: 200,height: 50))//ラベル作成
             mindLabel.text = receiveArray[item]
             self.view.addSubview(mindLabel)
             
-            if colorArray == [0]{
-                mindLabel.textColor = UIColor.redColor()
-            }else if colorArray == [1]{
-                mindLabel.textColor = UIColor.yellowColor()
-                }else if  colorArray == [2]{
-                    mindLabel.textColor = UIColor.greenColor()
-                }else if colorArray == [3]{
-                        mindLabel.textColor = UIColor.blueColor()
-            }
+//            if colorArray == [0] {
+//                mindLabel.textColor = UIColor.red
+//            }else if colorArray == [1] {
+//                mindLabel.textColor = UIColor.yellow
+//            }else if  colorArray == [2] {
+//                mindLabel.textColor = UIColor.green
+//            }else if colorArray == [3] {
+//                mindLabel.textColor = UIColor.blue
+//            }
 
             if fontArray[item] == "■"{
-                mindLabel.font = UIFont.systemFontOfSize(CGFloat(20))
+                mindLabel.font = UIFont.systemFont(ofSize: CGFloat(20))
             }else if fontArray[item] == "■□"{
-                mindLabel.font = UIFont.systemFontOfSize(CGFloat(40))
+                mindLabel.font = UIFont.systemFont(ofSize: CGFloat(40))
             }else if fontArray[item] == "■□■"{
-                mindLabel.font = UIFont.systemFontOfSize(CGFloat(60))
+                mindLabel.font = UIFont.systemFont(ofSize: CGFloat(60))
             }
         }
         
@@ -114,7 +113,7 @@ class ViewController2: UIViewController {
 
 //前の画面に戻る
     @IBAction func add () {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

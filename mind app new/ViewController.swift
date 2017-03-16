@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
-    var mindDefault = NSUserDefaults.standardUserDefaults()//NSUserDefaultsを作成
+    var mindDefault = UserDefaults.standard//NSUserDefaultsを作成
     var mindArray:[String] = []
     
     @IBOutlet var myTextField: UITextField!//TextField作成
@@ -27,8 +27,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     var fontArray: [String] = []
     */
     
-    private let picker1Component = 0
-    private let picker2Component = 1
+    fileprivate let picker1Component = 0
+    fileprivate let picker2Component = 1
     
     
     override func viewDidLoad() {
@@ -44,33 +44,33 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         self.view.addSubview(myUIPicker)//UIPickerView
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
         
     }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return picker1Array.count
         
     }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return picker1Array[row]
     }
     
 
     @IBAction func didTapmindButton(){
         
-        self.mindArray.append(self.myTextField.text)
-        performSegueWithIdentifier("to2", sender: nil)
+        self.mindArray.append(self.myTextField.text!)
+        performSegue(withIdentifier: "to2", sender: nil)
             
-            mindDefault.setObject(mindArray, forKey: "MIND")
+            mindDefault.set(mindArray, forKey: "MIND")
             mindDefault.synchronize()
             
     }
-            override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if(segue.identifier == "to2"){
-            var viewController2: ViewController2 = segue.destinationViewController as!ViewController2
+            var viewController2: ViewController2 = segue.destination as!ViewController2
             viewController2.receiveArray = self.mindArray
-            println(mindArray)
+            print(mindArray)
                 }
     }
 
